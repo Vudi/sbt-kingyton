@@ -5,21 +5,21 @@ import qrcode from "qrcode-terminal";
 // CONFIG CONSTANTS
 
 const COLLECTION_ADDRESS = Address.parse(
-  "kQCcE4A36AzUOGfTYI_-NOxILUImU5T3YNH4ky5IXfsI1ovj"
+  "EQDNhyUYk3psUGi0Oe9YVv9ZJ1dC5OdJ5yxLdi8TVSBUPV23"
 );
 
 const OWNER_ADDRESS = Address.parse(
-  "kQD51fCnbbKyzAfxNF0Bsi4hXZ8JC0Md2-aB9hqo6H5Ymk9w"
+  "EQAj-RQTlNNwjkuRVYWdfamU0jjvQbH31lkxTw-osulj4oqm"
 );
 
 const RECEIVER_ADDRESS = Address.parse(
-  "kQCxLho_ohqvZnMMDxJQ81ngZ4SljtTBJYjswm3ewr-1v4yD"
+  "EQCd9phIAVzOaHA1F_lGT-NUP84MsAR1pD3ISG5addYO7cvX"
 );
 
-const INDEX = 1;
+const INDEX = 121;
 
 const METADATA_URL =
-  "https://ipfs.io/ipfs/Qmd5YSeFtha7PQpdRoQtWEgmadA7A679DecN2BfweWNXVD?filename=vudi-sbt.json";
+  "https://ipfs.io/ipfs/QmfJFVSPHnx5R3aekgRNaMLX87RrvHBxHuXzGfpLYmLttr?filename=kingyTON-sbt.json";
 
 // ------------------------
 
@@ -34,7 +34,7 @@ const main = async () => {
   const msg = beginCell()
     .storeUint(1, 32)
     .storeUint(1, 64)
-    .storeUint(INDEX, 64)
+    .storeUint(INDEX-1, 64)
     .storeCoins(toNano(0.01))
     .storeRef(nftItemMessage)
     .endCell();
@@ -45,7 +45,7 @@ const main = async () => {
     bounceable: true,
   });
   // we must convert TON to nanoTON
-  const amountToSend = toNano("0.05").toString();
+  const amountToSend = toNano("0.03").toString();
   // BOC means Bag Of Cells here
   const preparedBodyCell = msg.toBoc().toString("base64url");
 

@@ -9,10 +9,8 @@ import qs from "qs";
 
 // CONFIG CONSTANTS
 
-const MODE: "test" | "main" = "test";
-
 const OWNER_ADDRESS = Address.parse(
-  "kQD51fCnbbKyzAfxNF0Bsi4hXZ8JC0Md2-aB9hqo6H5Ymk9w"
+  "EQAj-RQTlNNwjkuRVYWdfamU0jjvQbH31lkxTw-osulj4oqm"
 );
 
 // ------------------------
@@ -25,7 +23,7 @@ const main = async () => {
     ownerAddress: OWNER_ADDRESS,
     nextItemIndex: 0,
     collectionContent:
-      "https://ipfs.io/ipfs/QmW9boM44rdJCarBDzkEWRB8HSEBFJXjtVQTVggBCJZA11?filename=Vudi_Happy_new_Year.json",
+      "https://ipfs.io/ipfs/QmVxXnKQ7FzhP4NxNAxc1bjeycREFkzjJRguwyxnZfg8ZR?filename=kingyTON_Happy_new_Year.json",
     commonContent: "",
     nftItemCode: itemCode,
     royaltyParams: {
@@ -52,15 +50,15 @@ const main = async () => {
 
   // Encode link to deploy contract
   let link =
-    `https://${MODE === "test" ? "test." : ""}tonhub.com/transfer/` +
-    address.toFriendly({ testOnly: true }) +
+    `https://tonhub.com/transfer/` +
+    address.toFriendly() +
     "?" +
     qs.stringify({
       text: "Deploy contract",
       amount: toNano(1).toString(10),
       init: initCell.toBoc({ idx: false }).toString("base64"),
     });
-  console.log("Address: " + address.toFriendly({ testOnly: true }));
+  console.log("Address: " + address.toFriendly());
   qrcode.generate(link, { small: true }, (code) => {
     console.log(code);
   });
