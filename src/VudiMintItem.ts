@@ -19,7 +19,7 @@ const RECEIVER_ADDRESS = Address.parse(
 const INDEX = 121;
 
 const METADATA_URL =
-  "https://ipfs.io/ipfs/QmfJFVSPHnx5R3aekgRNaMLX87RrvHBxHuXzGfpLYmLttr?filename=kingyTON-sbt.json";
+  "ТУТ IPFS";
 
 // ------------------------
 
