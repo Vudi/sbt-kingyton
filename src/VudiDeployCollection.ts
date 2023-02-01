@@ -23,7 +23,7 @@ const main = async () => {
     ownerAddress: OWNER_ADDRESS,
     nextItemIndex: 0,
     collectionContent:
-      "https://ipfs.io/ipfs/QmVxXnKQ7FzhP4NxNAxc1bjeycREFkzjJRguwyxnZfg8ZR?filename=kingyTON_Happy_new_Year.json",
+      "ТУТ IPFS",
     commonContent: "",
     nftItemCode: itemCode,
     royaltyParams: {
